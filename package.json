@@ -1,10 +1,14 @@
 {
   "name": "react-callout",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightweight and stateless callout component for React.js",
   "main": "dist/react-callout.js",
   "scripts": {
     "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zalando/react-callout.git"
   },
   "keywords": [
     "callout",
