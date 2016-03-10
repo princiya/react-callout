@@ -11,7 +11,9 @@ function getCalloutMock(opts) {
     const options = Object.assign({}, defaultOpts, opts);
 
     return shallow(
-        React.createElement(Callout, options.props, options.children)
+        <Callout {...options.props}>
+            {options.children}
+        </Callout>
     );
 }
 
