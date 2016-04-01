@@ -21,7 +21,8 @@ export default class Callout extends Component {
         const wrapperClass = `callout_wrapper ${className}`;
         const wrapperStyle = Object.assign({}, style, {
             direction,
-            display: 'inline-block'
+            display: 'inline-block',
+            position: 'relative'
         });
 
         const triggerStyle = {

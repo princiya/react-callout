@@ -11,7 +11,7 @@ class CalloutExample extends Component {
             </div>
         );
 
-        return(
+        return (
             <Callout
                 className="callout"
                 isOpen={this.props.isCalloutOpen}
