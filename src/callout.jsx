@@ -14,7 +14,7 @@ export default class Callout extends Component {
             offset
         } = this.props;
 
-        const direction = alignment === 'right' ? 'rtl' : 'ltr';
+        const direction = alignment === 'right' ? 'rtl' : 'rtl';
         const bottom = position === 'top' ? '100%' : 'auto';
         const transform = `translate3d(${offset.x}, ${offset.y}, 0)`;
 
@@ -31,12 +31,18 @@ export default class Callout extends Component {
 
         const contentStyle = {
             display: isOpen ? 'block' : 'none',
-            direction: 'ltr',
+            direction,
             position: 'absolute',
             zIndex: zIndex,
-            bottom,
+            //bottom,
             transform
         };
+
+        //to set the horizontal right or left property
+        contentStyle[alignment] = '10px';
+
+        //to set the vertical top or bottom property
+        contentStyle[position] = '10px';
 
         return (
             <div className={wrapperClass} style={wrapperStyle}>
@@ -57,7 +63,7 @@ Callout.propTypes = {
     style: PropTypes.object,
     zIndex: PropTypes.number,
     position: PropTypes.oneOf(['top', 'bottom']),
-    alignment: PropTypes.oneOf(['left', 'right']),
+    alignment: PropTypes.oneOf(['left', 'right', 'center']),
     offset: PropTypes.shape({
         x: PropTypes.string,
         y: PropTypes.string

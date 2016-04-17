@@ -16,7 +16,7 @@ class CalloutExample extends Component {
                 className="callout"
                 isOpen={this.props.isCalloutOpen}
                 position="top"
-                alignment="right"
+                alignment="left"
                 offset={{x: '-20px', y: '-10px'}}
                 content={content}
             >
