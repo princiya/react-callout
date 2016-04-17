@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 export default class Callout extends Component {
     render() {
+        console.log('props from callout.jsx', this.props);
         const {
             className,
             children,
@@ -11,7 +12,9 @@ export default class Callout extends Component {
             zIndex,
             position,
             alignment,
-            offset
+            offset,
+            clientX,
+            clientY
         } = this.props;
 
         const direction = alignment === 'right' ? 'rtl' : 'rtl';
@@ -32,17 +35,17 @@ export default class Callout extends Component {
         const contentStyle = {
             display: isOpen ? 'block' : 'none',
             direction,
-            position: 'absolute',
+            position: 'fixed',
             zIndex: zIndex,
             //bottom,
             transform
         };
 
         //to set the horizontal right or left property
-        contentStyle[alignment] = '10px';
+        contentStyle[alignment] = clientX + 'px';
 
         //to set the vertical top or bottom property
-        contentStyle[position] = '10px';
+        contentStyle[position] = clientY + 'px';
 
         return (
             <div className={wrapperClass} style={wrapperStyle}>

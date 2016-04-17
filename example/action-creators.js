@@ -1,3 +1,3 @@
-export function toggle() {
-    return {type: 'TOGGLE'};
+export function toggle(data) {
+    return { type: 'TOGGLE', data };
 }
